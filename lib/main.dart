@@ -1,6 +1,7 @@
+// lib/main.dart
 import 'package:flutter/material.dart';
-
-import 'presentation/widgets/bottom_nav_bar.dart';
+import 'package:mishra_ji/presentation/screens/onboarding_screen.dart';
+import 'package:mishra_ji/presentation/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +14,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mishra Ji',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primaryColor: const Color(0xFFFF8C37),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFFFF8C37),
+          primary: const Color(0xFFFF8C37),
+        ),
+        fontFamily: 'Poppins',
       ),
-      home: CustomBottomNavBar(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/onboarding': (context) => const OnboardingScreen(),
+      },
     );
   }
 }
