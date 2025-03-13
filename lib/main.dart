@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mishra_ji/constants/theme/app_themes.dart';
 
 import 'presentation/widgets/bottom_nav_bar.dart';
 
@@ -13,10 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mishra Ji',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       home: CustomBottomNavBar(),
     );
   }
