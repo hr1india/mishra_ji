@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mishra_ji/presentation/screens/coupons.dart';
+import 'package:mishra_ji/presentation/screens/orders.dart';
 import 'package:mishra_ji/presentation/screens/settings.dart';
 import 'package:mishra_ji/presentation/widgets/profile-widgets/headtext.dart';
 import 'package:mishra_ji/presentation/widgets/profile-widgets/options_btn.dart';
@@ -63,7 +64,12 @@ class Profile extends StatelessWidget{
         
               //profile nav items
               SizedBox(height: 20,),
-              ProfileNavs(mainTitle: "My Orders", description: "Already 7 orders placed"),
+
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Orders()));
+                },
+                child: ProfileNavs(mainTitle: "My Orders", description: "Already 7 orders placed")),
               Divider(thickness: 1,),
               ProfileNavs(mainTitle: "Shipping Address", description: "You have a single address"),
               Divider(thickness: 1,),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mishra_ji/presentation/widgets/profile-widgets/coupon_card.dart';
+import 'package:mishra_ji/presentation/widgets/profile-widgets/coupon_card_active.dart';
+import 'package:mishra_ji/presentation/widgets/profile-widgets/coupon_card_expired.dart'; // Import expired card widget
 import 'package:mishra_ji/presentation/widgets/profile-widgets/prev_btn.dart';
 
 class Coupons extends StatefulWidget {
@@ -45,30 +46,46 @@ class _CouponsState extends State<Coupons> {
               child: Row(
                 children: [
                   _buildToggleButton("Active", true),
-                  SizedBox(width: 8,),
+                  SizedBox(width: 8),
                   _buildToggleButton("Expired", false),
                 ],
               ),
             ),
             Container(
-             margin: EdgeInsets.all(25), 
+              margin: EdgeInsets.all(25),
               child: Column(
-                children: [
-                  CouponCard(img: "assets/images/coupon.png", 
-                  couponName: "BUY2GET1", 
-                  discount: "50% OFF", 
-                  validity: "Valid for only 4 days"
-                  ),
-
-                  CouponCard(img: "assets/images/coupon.png", 
-                  couponName: "FASHION20", 
-                  discount: "50% OFF", 
-                  validity: "Valid for only 4 days",
-                  topColor: Color(0xFFE24DA9),
-                  ),
-                ],
+                children: isActive
+                    ? [ // Show active coupons
+                        CouponCardActive(
+                          img: "assets/images/coupon.png",
+                          couponName: "BUY2GET1",
+                          discount: "50% OFF",
+                          validity: "Valid for only 4 days",
+                        ),
+                        CouponCardActive(
+                          img: "assets/images/coupon.png",
+                          couponName: "FASHION20",
+                          discount: "50% OFF",
+                          validity: "Valid for only 4 days",
+                          topColor: Color(0xFFE24DA9),
+                        ),
+                      ]
+                    : [ // Show expired coupons
+                        CouponCardExpired(
+                          img: "assets/images/coupon.png",
+                          couponName: "SUMMER10",
+                          discount: "10% OFF",
+                          validity: "Expired on March 10",
+                        ),
+                        CouponCardExpired(
+                          img: "assets/images/coupon.png",
+                          couponName: "WINTER50",
+                          discount: "50% OFF",
+                          validity: "Expired on January 25",
+                        ),
+                      ],
               ),
-            )
+            ),
           ],
         ),
       ),

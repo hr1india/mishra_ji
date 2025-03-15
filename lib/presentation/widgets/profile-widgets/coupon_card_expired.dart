@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CouponCard extends StatelessWidget {
+class CouponCardExpired extends StatelessWidget {
   final String img;
   final String couponName;
   final String discount;
   final String validity;
   final Color topColor;
 
-  const CouponCard({
+  const CouponCardExpired({
     Key? key,
     required this.img,
     required this.couponName,
@@ -94,14 +94,14 @@ class CouponCard extends StatelessWidget {
                 Spacer(),
                 ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
+                        backgroundColor: Colors.grey,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),
                       onPressed: () {},
                       child: Text(
-                        "SHOP NOW",
+                        "Expired",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
