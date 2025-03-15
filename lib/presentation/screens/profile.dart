@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mishra_ji/presentation/screens/settings.dart';
 import 'package:mishra_ji/presentation/widgets/profile-widgets/headtext.dart';
 import 'package:mishra_ji/presentation/widgets/profile-widgets/options_btn.dart';
 import 'package:mishra_ji/presentation/widgets/profile-widgets/prev_btn.dart';
@@ -71,7 +72,12 @@ class Profile extends StatelessWidget{
               Divider(thickness: 1,),
               ProfileNavs(mainTitle: "My Reviews", description: "Reviews for 5 items"),
               Divider(thickness: 1,),
-              ProfileNavs(mainTitle: "Settings", description: "Notifications, Password"),
+
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Settings()));
+                },
+                child: ProfileNavs(mainTitle: "Settings", description: "Notifications, Password")),
               Divider(thickness: 1,),
             ],
           ),
