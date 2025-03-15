@@ -11,6 +11,7 @@ final AppBarTheme appBarTheme = AppBarTheme(
     color: Colors.white,
     fontSize: 18,
     fontWeight: FontWeight.normal,
+    fontFamily: 'PlusJakartaSans'
   ),
 );
 
@@ -25,6 +26,7 @@ final AppBarTheme darkAppBarTheme = AppBarTheme(
     color: Colors.white,
     fontSize: 18,
     fontWeight: FontWeight.normal,
+    fontFamily: 'PlusJakartaSans'
   ),
 );
 
