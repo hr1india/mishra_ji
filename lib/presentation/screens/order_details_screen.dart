@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mishra_ji/presentation/widgets/profile-widgets/prev_btn.dart';
 
 class OrderDetailsScreen extends StatelessWidget {
   final String itemName;
@@ -26,13 +27,26 @@ class OrderDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Order Details"),
+        centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black),
+        automaticallyImplyLeading: false,
+        leading: Padding(
+          padding: EdgeInsets.only(left: 16),
+          child: PrevBtn(),
+        ),
+        title: Text(
+          "Order ID",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+       
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
