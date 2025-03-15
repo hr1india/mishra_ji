@@ -138,7 +138,27 @@ class _SettingsState extends State<Settings> {
                   SettingsNavs(icon: Icon(Icons.pin_drop_outlined, color: Colors.grey), title: "My Location"),
                   SizedBox(height: 15),
                   SettingsNavs(icon: Icon(Icons.logout_outlined, color: Colors.red), title: "Logout"),
-                  SizedBox(height: 15),
+                  SizedBox(height: 35),
+
+                  SizedBox(
+                    height: 50,
+                    width: 150,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.question_mark_outlined, ),
+                          SizedBox(width: 8,),
+                          Text("Help Center")
+                        ],
+                      ),
+                    ),
+                  )
                 ],
               ),
             )
